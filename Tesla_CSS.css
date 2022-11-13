@@ -1,0 +1,272 @@
+html, body {
+    background-color: 	rgb(22,23,24);
+    font-family: Arial;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+
+
+
+/*        Premier bloc        */
+
+#firstBlock {
+    width: 54em;
+    margin-top: var(--size-top_firstBlock);
+    margin-left: var(--size-left_firstBlock);
+}
+
+
+/*        Titre, bar de chargement et état        */
+
+#simone {
+    margin: 0em;
+    font-size: 2em;
+}
+
+
+.charge {
+    outline: 1px solid black;
+    border-radius: 20px;
+    border-color: black; 
+    height: 15px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+
+.charge::-webkit-progress-bar {
+    border-radius: 20px;
+    height: 15px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+
+.charge::-webkit-progress-value {
+    border-radius: 20px;
+    height: 15px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+
+.charge::-moz-progress-bar {
+    border-radius: 20px;
+    height: 15px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+
+#battery {
+    padding-top: 2em;
+}
+
+
+#profil {
+    position: absolute;
+    top: var(--size-top_profile);
+    left: var(--size-left_profile);
+}
+
+
+#voiture {
+    margin-top: 3em;
+}
+
+
+/*        Liste des voyants        */
+
+.liste {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+
+.voyants {
+    display: block;
+    padding-left: var(--size-padding_voyants);
+}
+
+.gapVoyants {
+    margin-top: 3em;
+}
+
+
+
+
+/*        Second bloc        */
+
+#secondBlock {
+    position: absolute;
+    top: var(--size-top_secondBlock);
+    right: var(--size-right_secondBlock);
+    
+}
+
+
+/*        Liste des actions        */
+
+#gapActions {
+    margin-top: 1em;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+.grey {
+    color: rgb(138,139,139);
+}
+
+.white {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/*     Initialisation des valeurs pour la taille     */
+
+:root
+{
+    --size-top_firstBlock: calc(var(--size)*1);
+    --size-left_firstBlock: calc(var(--size)*1);
+    --size-top_profile: calc(var(--size)*0.2);
+    --size-left_profile: calc(var(--size)*1);
+    --size-padding_voyants: calc(var(--size)*1);
+    --size-right_secondBlock: calc(var(--size)*1);
+    --size-right_secondBlock: calc(var(--size)*1);
+}
+
+
+/*     Format de haut en bas du plus petit au plus grand ecran    */
+
+@media (max-aspect-ratio: 1/1)
+{
+    :root{
+        --size: 15vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*1);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*5);
+        --size-padding_voyants: calc(var(--size)*0);
+        --size-right_secondBlock: calc(var(--size)*1.5);
+        --size-top_secondBlock: calc(var(--size)*6.5);
+    }
+
+    #firstBlock {
+        width: 20em;
+    }
+
+    #profil {
+        width: 8%;
+        height: 6%;
+    }
+
+    .logoVoyants {
+        width: 60%;
+    }
+
+    .logoActions {
+        width: 20%;
+        height: 20%;
+    }
+
+    #voiture {
+        padding-left: 3em;
+        width: 60%;
+    }
+}
+
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 5/4)
+{
+    :root{
+        --size: 12vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*1.1);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*5.5);
+        --size-padding_voyants: calc(var(--size)*0.5);
+        --size-right_secondBlock: calc(var(--size)*2);
+        --size-top_secondBlock: calc(var(--size)*6);
+    }
+
+    #firstBlock {
+        width: 44em;
+    }
+
+    #profil {
+        width: 6%;
+        height: 7%;
+    }
+
+    .logoVoyants {
+        width: 75%;
+    }
+
+    .logoActions {
+        width: 15%;
+        height: 15%
+    }
+
+    #voiture {
+        width: 75%;
+    }
+}
+
+
+@media (min-aspect-ratio: 5/4) and (max-aspect-ratio: 4/3)
+{
+    :root{
+        --size: 12vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*1);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*6.5);
+        --size-padding_voyants: calc(var(--size)*0.8);
+        --size-right_secondBlock: calc(var(--size)*2.5);
+        --size-top_secondBlock: calc(var(--size)*7);
+    }
+}
+
+@media (min-aspect-ratio: 4/3) and (max-aspect-ratio: 3/2)
+{
+    :root{
+        --size: 10vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*1);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*7.5);
+        --size-right_secondBlock: calc(var(--size)*3);
+        --size-top_secondBlock: calc(var(--size)*7.5);
+    }
+}
+
+@media (min-aspect-ratio: 3/2) and (max-aspect-ratio: 8/4)
+{
+    :root{
+        --size: 9vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*2);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*8.5);
+        --size-right_secondBlock: calc(var(--size)*4);
+        --size-top_secondBlock: calc(var(--size)*7.5);
+    }
+}
+
+@media (min-aspect-ratio: 8/4)
+{
+    :root{--size: 8vw;
+        --size-top_firstBlock: calc(var(--size)*0.2);
+        --size-left_firstBlock: calc(var(--size)*0.2);
+        --size-top_profile: calc(var(--size)*0.2);
+        --size-left_profile: calc(var(--size)*6);
+        --size-right_secondBlock: calc(var(--size)*0.3);
+        --size-top_secondBlock: calc(var(--size)*0);
+    }
+}
